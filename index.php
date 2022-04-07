@@ -23,20 +23,20 @@ $smtp['Port'] = 587;
 echo "Running Apache check... ";
 $apacheRunning = isApacheRunning();
 
-if (!$apacheRunning) {
+if ($apacheRunning) {
+  print_r("Apache OK.\n");
+} else {
   print_r("Apache not running.\n");
   sendNotification($smtp, $recipientEmail);
   restartApache();
-} else {
-  print_r("Apache OK.\n");
 }
 
 function checkCommand() {
-  return 'service apache2 status | grep -i running';
+  return 'sudo service apache2 status | grep -i running';
 }
 
 function restartCommand() {
-  return 'service apache2 restart';
+  return '/etc/init.d/apache2 restart';
 }
 
 function sendNotification($smtp, $recipientEmail) {
