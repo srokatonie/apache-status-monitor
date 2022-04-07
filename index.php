@@ -1,11 +1,5 @@
 <?php
 
-// Copy .env.example to .env and fill details
-
-//CRON COMMAND
-// */5 * * * * /usr/bin/php /path_to_apache-monitor/index.php > /dev/null 2>&1
-
-
 require 'vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
