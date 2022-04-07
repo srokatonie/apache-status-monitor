@@ -34,7 +34,7 @@ $ which php
 // ie. /usr/bin/php
 ```
 
-Then add CRON JOB
+Then add a CRON job
 
 ```
 $ crontab -e
