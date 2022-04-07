@@ -44,6 +44,6 @@ Add line to run every 5 minutes
 
 ```
 */5 * * * * /usr/bin/php /path_to_apache-monitor/index.php > /dev/null 2>&1
+# For debugging:
+*/1 * * * * /usr/bin/php /path_to_apache-monitor/index.php >> //path_to_apache-monitor/log.txt
 ```
-
-> **_NOTE:_**  You may need to restart CRON every time you edit PHP script.
